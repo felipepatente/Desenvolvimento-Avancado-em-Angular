@@ -49,18 +49,17 @@ export class AppComponent implements OnInit {
     return new Observable(subscriber => {
 
       if(nome === 'Felipe'){
-
         subscriber.next('Olá! ' + nome);
         subscriber.next('Olá de novo! ' + nome);
         
         setTimeout(() => {
           subscriber.next('Resposta com Delay');
-        }, 5000)
+        }, 5000);
+        subscriber.complete();
 
       }else{
-        subscriber.error('Ops! Deu erro!');
+        subscriber.error('Ops! Deu erro!');        
       }
-
     })
   }
 
@@ -75,6 +74,16 @@ export class AppComponent implements OnInit {
     this.minhaObservable('Felipe')
       .subscribe(
         result => console.log(result),
-        erro => console.log(erro));      
+        erro => console.log(erro),
+        () => console.log('FIM'));  
+        
+    const observer = {
+      next: valor => console.log('Nex:', valor),
+      error: erro => console.log('Erro: ', erro),
+      complete: () => console.log('FIM!')
+    }    
+
+    const obs = this.minhaObservable('Felipe');
+    obs.subscribe(observer);
   }
 }
