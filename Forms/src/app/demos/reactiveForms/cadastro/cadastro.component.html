@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label class="col-md-2 control-label">CPF</label>
                 <div class="col-md-10">
-                    <input class="form-control" id="cpf" type="text" placeholder="CPF (requerido)" formControlName="cpf"/>
+                    <input class="form-control" id="cpf" type="text" placeholder="CPF (requerido)" formControlName="cpf" cpf [textMask]="{mask: MASKS.cpf.textMask}"/>
                 </div>
             </div>
 
@@ -36,7 +36,8 @@
             <div class="form-group">
                 <label class="col-md-2 control-label">Senha</label>
                 <div class="col-md-10">
-                    <input class="form-control" id="senha" type="password" placeholder="Senha (requerido)" formControlName="senha"/>                    
+                    <input class="form-control" id="senha" type="password" placeholder="Senha (requerido)" formControlName="senha" />
+                    
                 </div>
             </div>
 
