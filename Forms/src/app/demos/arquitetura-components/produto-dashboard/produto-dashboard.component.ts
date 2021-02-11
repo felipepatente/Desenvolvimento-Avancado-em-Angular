@@ -55,9 +55,10 @@ export class ProdutoDashboardComponent implements OnInit {
       ativo: false,
       valor: 600,
       imagem: 'headset.jpg'
-    }];
+    }];    
+  }
 
-    this.qtdAtivo = 5;
-
+  mudarStatus(event: Produto){
+    event.ativo = !event.ativo;
   }
 }
