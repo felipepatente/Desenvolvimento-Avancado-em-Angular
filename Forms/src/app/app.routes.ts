@@ -12,7 +12,7 @@ const rootRouterConfig: Routes = [
     { path: 'sobre', component: SobreComponent },
     { path: 'cadastro', component: CadastroComponent },
     { path: 'produtos', 
-            loadChildren: () => import('./demos/arquitetura-components/produto.module')
+            loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
             .then(m => m.ProdutoModule)},
             
     { path: '**', component: NotFoundComponent},        
