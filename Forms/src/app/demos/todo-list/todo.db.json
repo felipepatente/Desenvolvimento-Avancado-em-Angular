@@ -2,8 +2,8 @@
     "todolist": [{
             "id": 1,
             "nome": "Responder e-mails",
-            "finalizado": false,
-            "iniciado": true
+            "finalizado": true,
+            "iniciado": false
         },
         {
             "id": 2,
